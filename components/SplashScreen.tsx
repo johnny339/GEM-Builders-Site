@@ -28,8 +28,8 @@ export default function SplashScreen({ onComplete } : SplashScreenProps) {
         setTimeout(() => {
           setCurrentLogoIndex(prev => prev + 1);
           setLogoFade(true);
-        }, 300); // Fade out duration
-      }, 1000); // Time each logo is displayed
+        }, 200); // Fade out duration
+      }, 200); // Time each logo is displayed
 
       return () => clearTimeout(logoTimer);
     } else {
@@ -54,7 +54,7 @@ export default function SplashScreen({ onComplete } : SplashScreenProps) {
 
   return (
     <div
-      className={`fixed inset-0 z-[100] bg-white flex items-center justify-center cursor-pointer transition-opacity duration-500 ${
+      className={`fixed inset-0 z-100 bg-white flex items-center justify-center cursor-pointer transition-opacity duration-500 ${
         fadeOut ? 'opacity-0' : 'opacity-100'
       }`}
       onClick={handleComplete}
