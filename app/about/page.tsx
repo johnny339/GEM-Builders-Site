@@ -7,12 +7,15 @@ import SiteBackground from "@/components/SiteBackground";
 export default function About() {
   return (
     <>
-    <SiteBackground 
-        title="About GEM"
-      />
+    <SiteBackground/>
 {/* About Section */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
+              About GEM
+            </h1>
+          </div>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">

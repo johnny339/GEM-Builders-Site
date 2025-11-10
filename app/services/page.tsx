@@ -21,13 +21,18 @@ export default function Services() {
   
   return (
     <>
-      <SiteBackground 
-        title="Our Services" 
-        subtitle="Comprehensive construction solutions tailored to your needs"
-      />
+      <SiteBackground/>
       
       <section className="py-20 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
+              Our Services
+            </h2>
+            <p className="text-lg md:text-xl">
+              Comprehensive construction solutions tailored to your needs
+            </p>
+          </div>
           <div className="grid md:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div 

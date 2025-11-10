@@ -31,14 +31,14 @@ export default function Projects() {
 
   return (
     <>
-    <SiteBackground 
-        title="Featured Projects" 
-        // subtitle="A showcase of our finest work across residential and commercial builds"
-      />
+    <SiteBackground/>
       {/* Portfolio Section */}
       <section className="py-20 px-4" style={{ backgroundColor: 'rgb(231, 212, 158)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
+              Featured Projects
+            </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             {projects.map((project, index) => (

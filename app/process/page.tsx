@@ -39,18 +39,18 @@ export default function Process() {
 
   return (
     <>
-      <SiteBackground 
-        title="Our Process" 
-        subtitle="From concept to completion, we guide you through every step"
-      />
+      <SiteBackground />
 
       {/* Process Steps */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
-              Simple, One Main Point of Contact
+              Our Process
             </h2>
+            <p className="text-lg md:text-xl">
+              From concept to completion, we guide you through every step
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

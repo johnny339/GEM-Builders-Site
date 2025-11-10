@@ -16,42 +16,42 @@ export default function Header({ transparent = false }: HeaderProps) {
 
   return (
     <header className={transparent ? "bg-transparent" : "bg-white border-b border-gray-200"}>
-      <nav className="px-4 md:px-8 py-3 md:py-4">
-        <div className="flex items-center justify-between md:justify-between">
+      <nav className="px-4 md:px-8 py-3 md:py-4 lg:py-5">
+        <div className="flex items-center justify-between md:justify-between max-w-7xl mx-auto">
           {/* Mobile: Empty space for balance */}
           <div className="md:hidden w-10"></div>
           
-          {/* Logo - Centered on mobile, left on desktop */}
+          {/* Logo - Centered on mobile, left on desktop - BIGGER SIZE */}
           <Link href="/" className="flex-shrink-0 md:mr-auto">
             <img
               src="/GEM-company-logo.png"
               alt="GEM Builders Logo"
-              className={`logo-img ${transparent ? 'brightness-0 invert' : ''}`}
+              className={`h-50 w-auto ${transparent ? 'brightness-0 invert' : ''}`}
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6 lg:gap-8 nav-links">
-            <Link href="/" className={`${linkClass} transition-colors font-medium`}>
+          <div className="hidden md:flex items-center gap-6 lg:gap-10 nav-links">
+            <Link href="/" className={`${linkClass} transition-colors font-medium text-base lg:text-lg`}>
               Home
             </Link>
-            <Link href="/services" className={`${linkClass} transition-colors`}>
+            <Link href="/services" className={`${linkClass} transition-colors text-base lg:text-lg`}>
               Services
             </Link>
-            <Link href="/projects" className={`${linkClass} transition-colors`}>
+            <Link href="/projects" className={`${linkClass} transition-colors text-base lg:text-lg`}>
               Projects
             </Link>
-            <Link href="/process" className={`${linkClass} transition-colors`}>
+            <Link href="/process" className={`${linkClass} transition-colors text-base lg:text-lg`}>
               Process
             </Link>
-            <Link href="/about" className={`${linkClass} transition-colors`}>
+            <Link href="/about" className={`${linkClass} transition-colors text-base lg:text-lg`}>
               About
             </Link>
 
             {/* Contact Button */}
             <Link 
               href="/contact"
-              className={`px-4 lg:px-6 py-2 border-2 transition-colors ${
+              className={`px-6 lg:px-8 py-2 lg:py-3 border-2 transition-colors text-base lg:text-lg font-medium ${
                 transparent 
                   ? 'border-white text-white hover:bg-white hover:text-black' 
                   : 'border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white'
