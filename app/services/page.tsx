@@ -1,6 +1,23 @@
-'use client';
-
 import SiteBackground from '@/components/SiteBackground';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Services - Siding, Windows, Framing, Trim & Decks',
+  description: 'Professional specialty contracting in Fort Collins and Eagle County: siding installation, window replacement, framing, interior trim carpentry, and custom deck construction. Free estimates.',
+  keywords: [
+    'siding contractor Fort Collins',
+    'window installation Vail',
+    'framing Edwards CO',
+    'trim carpentry Eagle County',
+    'deck builder Fort Collins',
+    'specialty contractor Colorado'
+  ],
+  openGraph: {
+    title: 'GEM Builders Services | Fort Collins & Eagle County',
+    description: 'Expert siding, windows, framing, trim & decks across Northern Colorado and Eagle County',
+    url: 'https://gembuildsco.com/services',
+  },
+};
 
 export default function Services() {
   const services = [

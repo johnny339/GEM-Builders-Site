@@ -1,7 +1,15 @@
 
-'use client';
-
 import SiteBackground from '@/components/SiteBackground';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Our Process - Simple & Professional',
+  description: 'Learn about our streamlined specialty contracting process. From consultation to completion, we make your siding, window, framing, or deck project easy.',
+  openGraph: {
+    title: 'GEM Builders Process | How We Work',
+    url: 'https://gembuildsco.com/process',
+  },
+};
 
 export default function Process() {
   const steps = [
