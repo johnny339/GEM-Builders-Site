@@ -74,7 +74,7 @@ export default function Contact() {
             }`}
           >
             <div className="flex items-start gap-3">
-              <div className="flex-shrink-0">
+              <div className="shrink-0">
                 {notification.type === 'success' ? (
                   <div 
                     className="w-6 h-6 rounded-full flex items-center justify-center text-black font-bold"
