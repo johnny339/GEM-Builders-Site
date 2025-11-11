@@ -137,13 +137,6 @@ export default function Process() {
                 Request Free Estimate
               </button>
             </a>
-            <a href='tel:9703315599'>
-              <button 
-                className="px-8 py-4 border-2 border-white text-white text-lg font-semibold hover:bg-white hover:text-black transition-all"
-              >
-                Call (970) 331-5599
-              </button>
-            </a>
           </div>
         </div>
       </section>

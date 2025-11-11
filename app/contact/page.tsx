@@ -47,11 +47,11 @@ export default function Contact() {
         showNotification('success', 'Thank you for your inquiry! We will contact you soon.');
         setFormData({ name: '', email: '', location: '', phone: '', projectType: '', message: '' });
       } else {
-        showNotification('error', 'Something went wrong. Please try again or call us at (970) 331-5599.');
+        showNotification('error', 'Something went wrong. Please try again.');
       }
     } catch (error) {
       console.error('Error submitting form:', error);
-      showNotification('error', 'Something went wrong. Please try again or call us at (970) 331-5599.');
+      showNotification('error', 'Something went wrong. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
