@@ -15,8 +15,7 @@ export default function About() {
           </h2>
           <p className="text-xl text-gray-700 mb-6 leading-relaxed">
             Since 1997, GEM Builders has been delivering expert specialty contracting services across Colorado. 
-            What started with one craftsman's dedication to quality framing has grown into a trusted name for 
-            siding, windows, framing, and interior trim carpentry.
+            What started with one craftsman's dedication to quality framing has grown into a trusted name.
           </p>
           <p className="text-xl text-gray-700 leading-relaxed">
             As a family-owned business, we combine decades of hands-on experience with modern project management 
