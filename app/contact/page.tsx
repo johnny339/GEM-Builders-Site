@@ -63,10 +63,7 @@ export default function Contact() {
     <>
       {/* <Header transparent={false} /> */}
 
-          <SiteBackground 
-              title="" 
-              // subtitle="A showcase of our finest work across residential and commercial builds"
-            />
+          <SiteBackground/>
       
       {/* Custom Notification Toast */}
       {notification.show && (
@@ -193,9 +190,12 @@ export default function Contact() {
                 onChange={(e) => setFormData({...formData, projectType: e.target.value})}
               >
                 <option value="">Select a service</option>
-                <option value="Home Remodels & Renovations">Home Remodels & Renovations</option>
-                <option value="Design-Build Services">Design-Build Services</option>
-                <option value="Project Management">Project Management</option>
+                <option value="Siding">Siding</option>
+                <option value="Windows">Windows</option>
+                <option value="Framing">Framing</option>
+                <option value="Interior Trim Carpentry">Interior Trim Carpentry</option>
+                <option value="Decks">Decks</option>
+                <option value="All In One">All In One</option>
               </select>
             </div>
             

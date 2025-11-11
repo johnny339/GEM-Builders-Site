@@ -38,9 +38,9 @@ export default function Header({ transparent = false }: HeaderProps) {
             <Link href="/services" className={`${linkClass} transition-colors text-base lg:text-lg`}>
               Services
             </Link>
-            <Link href="/projects" className={`${linkClass} transition-colors text-base lg:text-lg`}>
-              Projects
-            </Link>
+            {/* <Link href="/projects" className={`${linkClass} transition-colors text-base lg:text-lg`}> */}
+              {/* Projects */}
+            {/* </Link> */}
             <Link href="/process" className={`${linkClass} transition-colors text-base lg:text-lg`}>
               Process
             </Link>
@@ -121,13 +121,13 @@ export default function Header({ transparent = false }: HeaderProps) {
                     >
                       Services
                     </Link>
-                    <Link 
-                      href="/projects" 
-                      className="text-gray-900 hover:text-gray-600 transition-colors text-xl"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      Projects
-                    </Link>
+                    {/* <Link  */}
+                      {/* href="/projects"  */}
+                      {/* className="text-gray-900 hover:text-gray-600 transition-colors text-xl" */}
+                      {/* onClick={() => setMobileMenuOpen(false)} */}
+                    {/* > */}
+                      {/* Projects */}
+                    {/* </Link> */}
                     <Link 
                       href="/process" 
                       className="text-gray-900 hover:text-gray-600 transition-colors text-xl"
