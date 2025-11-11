@@ -109,20 +109,12 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white p-8 border-2 border-gray-200">
               <div className="text-4xl mb-4">🛠️</div>
               <h3 className="text-2xl font-bold text-black mb-3">Expert Craftsmanship</h3>
               <p className="text-gray-700">
                 Over 25 years of hands-on experience delivering precision work that stands the test of time.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 border-2 border-gray-200">
-              <div className="text-4xl mb-4">💰</div>
-              <h3 className="text-2xl font-bold text-black mb-3">Transparent Pricing</h3>
-              <p className="text-gray-700">
-                Detailed estimates with no hidden costs. You'll know exactly what to expect from start to finish.
               </p>
             </div>
 
