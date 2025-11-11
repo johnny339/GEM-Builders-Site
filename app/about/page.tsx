@@ -1,14 +1,6 @@
-import SiteBackground from "@/components/SiteBackground";
-import { Metadata } from "next";
+'use client';
 
-export const metadata: Metadata = {
-  title: 'About Us - 25+ Years Serving Fort Collins & Eagle County',
-  description: 'Family-owned specialty contractor with 25+ years experience serving Fort Collins, Vail, Edwards and Eagle County. Licensed, insured, and committed to quality craftsmanship.',
-  openGraph: {
-    title: 'About GEM Builders | Fort Collins & Eagle County Contractor',
-    url: 'https://gembuildsco.com/about',
-  },
-};
+import SiteBackground from "@/components/SiteBackground";
 
 export default function About() {
   return (
