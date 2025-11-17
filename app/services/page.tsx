@@ -1,23 +1,6 @@
-import SiteBackground from '@/components/SiteBackground';
-import { Metadata } from 'next';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Services - Siding, Windows, Framing, Trim & Decks',
-  description: 'Professional specialty contracting in Fort Collins and Eagle County: siding installation, window replacement, framing, interior trim carpentry, and custom deck construction. Free estimates.',
-  keywords: [
-    'siding contractor Fort Collins',
-    'window installation Vail',
-    'framing Edwards CO',
-    'trim carpentry Eagle County',
-    'deck builder Fort Collins',
-    'specialty contractor Colorado'
-  ],
-  openGraph: {
-    title: 'GEM Builders Services | Fort Collins & Eagle County',
-    description: 'Expert siding, windows, framing, trim & decks across Northern Colorado and Eagle County',
-    url: 'https://gembuildsco.com/services',
-  },
-};
+import SiteBackground from '@/components/SiteBackground';
 
 export default function Services() {
   const services = [
@@ -40,6 +23,10 @@ export default function Services() {
     {
       title: 'Deck Construction',
       description: 'Custom deck design and construction using composite, pressure-treated lumber, or hardwood materials.'
+    },
+    {
+    title: 'Custom Closets & Pantries',
+    description: 'Built-in closet systems and pantry organization solutions designed to maximize storage and functionality.'
     }
   ];
   
@@ -85,6 +72,29 @@ export default function Services() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+      {/* Final CTA */}
+      <section className="py-20 px-4 bg-black text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Ready to Start Your Project?
+          </h2>
+          <p className="text-xl text-white/90 mb-8">
+            Get your free, no-obligation estimate today
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <a href="/contact">
+              <button
+                className="px-8 py-4 text-lg font-semibold transition-all"
+                style={{ backgroundColor: 'rgb(231, 212, 158)', color: '#000' }}
+                onMouseEnter={(e) => e.currentTarget.style.opacity = '0.9'}
+                onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+              >
+                Request Free Estimate
+              </button>
+            </a>
           </div>
         </div>
       </section>

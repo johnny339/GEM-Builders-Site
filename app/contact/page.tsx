@@ -192,6 +192,7 @@ export default function Contact() {
                 <option value="Windows">Windows</option>
                 <option value="Framing">Framing</option>
                 <option value="Interior Trim Carpentry">Interior Trim Carpentry</option>
+                <option value="Custom Closets & Pantries">Custom Closets & Pantries</option>
                 <option value="Decks">Decks</option>
                 <option value="All In One">All In One</option>
               </select>

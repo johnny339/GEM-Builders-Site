@@ -155,8 +155,8 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {['Siding', 'Windows', 'Framing', 'Trim Carpentry', 'Decks'].map((service, index) => (
+          <div className="grid gap-3">
+            {['Siding', 'Windows', 'Framing', 'Trim Carpentry', 'Decks', 'Custom Closets & Pantries'].map((service, index) => (
               <a href="/services" key={index}>
                 <div className="p-6 border-2 border-gray-200 hover:border-black transition-all text-center group cursor-pointer">
                   <h3 className="text-xl font-bold text-black group-hover:underline">{service}</h3>
