@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.gembuildsco.com
+
+# Sitemaps
+Sitemap: https://www.gembuildsco.com/sitemap.xml
