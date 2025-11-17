@@ -6,6 +6,12 @@ export default function StructuredData() {
     "image": "https://gembuildsco.com/GEM-company-logo.png",
     "url": "https://gembuildsco.com",
     "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Eagle",
+      "addressRegion": "CO",
+      "addressCountry": "US"
+    },
     "description": "Expert specialty contracting services including siding, windows, framing, trim carpentry, and decks. Serving Fort Collins, Loveland, Windsor, Vail, Edwards, Eagle County and surrounding areas. 25+ years experience.",
     
     // Multiple locations
