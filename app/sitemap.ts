@@ -1,5 +1,10 @@
 import { MetadataRoute } from 'next';
 
+module.exports = {
+  siteUrl: 'https://www.gembuildsco.com',
+  generateRobotsTxt: true,
+};
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://gembuildsco.com';
 

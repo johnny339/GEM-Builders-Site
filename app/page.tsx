@@ -1,6 +1,7 @@
 'use client';
 import Header from "@/components/Header";
 import SplashScreen from "@/components/SplashScreen";
+import Head from "next/head";
 import { useState } from "react";
 
 export default function Home() {
@@ -8,6 +9,73 @@ export default function Home() {
   
   return (
     <>
+    <Head>
+      <title>Premium Renovation Project Management | Colorado</title>
+      <meta name="description" content="Stress-free, high-quality home renovations managed." />
+      <meta name="keywords" content="Colorado home renovation, project management, Eagle County construction, Fort collins specialty contractor, Eagle County Specialty contractor.
+                                      siding contractor, framing contractor, interior carpenter eagle, interior carpenter fort collins" />
+      <script type="application/ld+json">
+        {`
+        {
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "GEM Builders LLC",
+          "image": "/GEM-company-logo.png",
+          "url": "https://www.gembuildsco.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Eagle",
+            "addressRegion": "CO",
+            "addressCountry": "US"
+          },
+          "areaServed": [
+            {
+              "@type": "Place",
+              "name": "Eagle County, Colorado"
+            },
+            {
+              "@type": "Place",
+              "name": "Eagle, Colorado"
+            },
+            {
+              "@type": "Place",
+              "name": "Gypsum, Colorado"
+            },
+            {
+              "@type": "Place",
+              "name": "Edwards, Colorado"
+            },
+            {
+              "@type": "Place",
+              "name": "Avon, Colorado"
+            },
+            {
+              "@type": "Place",
+              "name": "Vail, Colorado"
+            },
+            {
+              "@type": "Place",
+              "name": "Frisco, Colorado"
+            },
+            {
+              "@type": "Place",
+              "name": "Silverthorne, Colorado"
+            },
+            {
+              "@type": "Place",
+              "name": "Loveland, Colorado"
+            }.
+            {
+              "@type": "Place",
+              "name": "Fort Collins, Colorado"
+            }
+          ],
+          "priceRange": "$$",
+          "description": "Stress-free, high-quality home renovations and project management in Colorado mountain towns and Fort Collins."
+        }
+        `}
+      </script>
+    </Head>
       {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
       
       {/* Transparent Header */}
