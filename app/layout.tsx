@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://gembuildsco.com'), // Replace with your actual domain when you get it
   title: {
-    default: 'GEM Builders | Specialty Contractor Colorado',
+    default: 'Home Renovation Contractor | Eagle County & Northern Colorado',
     template: '%s | GEM Builders'
   },
   description: 'Expert specialty contracting in Fort Collins, Vail, Edwards & Eagle County. Siding, windows, framing, trim carpentry & decks. 25+ years experience. Licensed & insured. Free estimates.',

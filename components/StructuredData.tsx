@@ -6,6 +6,13 @@ export default function StructuredData() {
     "image": "https://gembuildsco.com/GEM-company-logo.png",
     "url": "https://gembuildsco.com",
     "priceRange": "$$",
+    "serviceType": [
+      "Siding Contractor",
+      "Window Installation",
+      "Deck Builder",
+      "Trim Carpentry",
+      "Framing Contractor"
+  ],
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Eagle",

@@ -19,6 +19,13 @@ export default function Home() {
         {
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
+          "serviceType": [
+            "Siding Contractor",
+            "Window Installation",
+            "Deck Builder",
+            "Trim Carpentry",
+            "Framing Contractor"
+          ],
           "name": "GEM Builders LLC",
           "image": "/GEM-company-logo.png",
           "url": "https://www.gembuildsco.com",
