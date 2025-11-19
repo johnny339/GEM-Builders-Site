@@ -1,6 +1,7 @@
 'use client';
 
 import SiteBackground from '@/components/SiteBackground';
+import { motion } from 'framer-motion';
 
 export default function Process() {
   const steps = [
@@ -43,20 +44,43 @@ export default function Process() {
       {/* Process Steps */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
             <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
               How We Work
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               A streamlined approach to specialty contracting that puts quality and communication first
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div 
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.1
+                }
+              }
+            }}
+          >
             {steps.map((step, index) => (
-              <div 
+              <motion.div 
                 key={index}
                 className="border-2 border-gray-200 p-8 hover:border-black transition-all"
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+                transition={{ duration: 0.5 }}
+                whileHover={{ scale: 1.03, borderColor: '#000' }}
               >
                 <div 
                   className="text-7xl font-bold mb-4"
@@ -70,56 +94,113 @@ export default function Process() {
                 <p className="text-gray-700 leading-relaxed">
                   {step.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* What to Expect Section */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
               What to Expect
             </h2>
-          </div>
+          </motion.div>
           
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 border-2 border-gray-200">
+          <motion.div 
+            className="grid md:grid-cols-2 gap-8"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.15
+                }
+              }
+            }}
+          >
+            <motion.div 
+              className="bg-white p-8 border-2 border-gray-200"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ scale: 1.03, borderColor: '#000' }}
+            >
               <h3 className="text-2xl font-bold text-black mb-4">On-Time Completion</h3>
               <p className="text-gray-700">
                 We respect your time and stick to our schedule. Clear timelines and regular updates throughout your project.
               </p>
-            </div>
+            </motion.div>
             
-            <div className="bg-white p-8 border-2 border-gray-200">
+            <motion.div 
+              className="bg-white p-8 border-2 border-gray-200"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ scale: 1.03, borderColor: '#000' }}
+            >
               <h3 className="text-2xl font-bold text-black mb-4">Quality Materials</h3>
               <p className="text-gray-700">
                 We work with trusted suppliers and use only professional-grade materials for lasting results.
               </p>
-            </div>
+            </motion.div>
             
-            <div className="bg-white p-8 border-2 border-gray-200">
+            <motion.div 
+              className="bg-white p-8 border-2 border-gray-200"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ scale: 1.03, borderColor: '#000' }}
+            >
               <h3 className="text-2xl font-bold text-black mb-4">Clean Work Sites</h3>
               <p className="text-gray-700">
                 Daily cleanup and respect for your property. We leave your site clean and organized at the end of each day.
               </p>
-            </div>
+            </motion.div>
             
-            <div className="bg-white p-8 border-2 border-gray-200">
+            <motion.div 
+              className="bg-white p-8 border-2 border-gray-200"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ scale: 1.03, borderColor: '#000' }}
+            >
               <h3 className="text-2xl font-bold text-black mb-4">Direct Communication</h3>
               <p className="text-gray-700">
                 No middlemen. You work directly with our team and can reach us whenever questions arise.
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="py-20 px-4 bg-black text-white">
-        <div className="max-w-4xl mx-auto text-center">
+        <motion.div 
+          className="max-w-4xl mx-auto text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Ready to Get Started?
           </h2>
@@ -128,17 +209,17 @@ export default function Process() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href='/contact'>
-              <button 
+              <motion.button 
                 className="px-8 py-4 text-lg font-semibold transition-all"
                 style={{ backgroundColor: 'rgb(231, 212, 158)', color: '#000' }}
-                onMouseEnter={(e) => e.currentTarget.style.opacity = '0.9'}
-                onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+                whileHover={{ scale: 1.05, opacity: 0.9 }}
+                whileTap={{ scale: 0.98 }}
               >
                 Request Free Estimate
-              </button>
+              </motion.button>
             </a>
           </div>
-        </div>
+        </motion.div>
       </section>
     </>
   );

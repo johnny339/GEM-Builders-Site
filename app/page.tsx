@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import SplashScreen from "@/components/SplashScreen";
 import Head from "next/head";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const [showSplash, setShowSplash] = useState(true);
@@ -98,109 +99,229 @@ export default function Home() {
       >
         <div className="absolute inset-0 bg-black/30 z-10" aria-hidden="true"></div>
 
-        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+        <motion.div 
+          className="relative z-20 text-center px-4 max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <motion.h1 
+            className="text-5xl md:text-7xl font-bold text-white mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          >
             Expert Specialty Contracting<br />You Can Trust
-          </h1>
+          </motion.h1>
           <br></br>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <motion.div 
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          >
             <a href="/contact" className="inline-block">
-              <button
+              <motion.button
                 className="w-full px-8 py-4 text-lg font-semibold transition-all"
                 style={{ backgroundColor: 'rgb(231, 212, 158)', color: '#000' }}
-                onMouseEnter={(e) => e.currentTarget.style.opacity = '0.9'}
-                onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+                whileHover={{ scale: 1.05, opacity: 0.9 }}
+                whileTap={{ scale: 0.98 }}
                 aria-label="Get free estimate for your project"
               >
                 Get Free Estimate
-              </button>
+              </motion.button>
             </a>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* Trust Indicators */}
       <section className="py-12 px-4 bg-black text-white">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div>
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.2
+                }
+              }
+            }}
+          >
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.5 }}
+            >
               <div className="text-4xl font-bold mb-2" style={{ color: 'rgb(231, 212, 158)' }}>25+</div>
               <div className="text-sm uppercase tracking-wide">Years Experience</div>
-            </div>
+            </motion.div>
             {/* <div>
               <div className="text-4xl font-bold mb-2" style={{ color: 'rgb(231, 212, 158)' }}>100%</div>
               <div className="text-sm uppercase tracking-wide">Licensed & Insured</div>
             </div> */}
-            <div>
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.5 }}
+            >
               <div className="text-4xl font-bold mb-2" style={{ color: 'rgb(231, 212, 158)' }}>Local</div>
               <div className="text-sm uppercase tracking-wide">Family Owned</div>
-            </div>
-            <div>
+            </motion.div>
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.5 }}
+            >
               <div className="text-4xl font-bold mb-2" style={{ color: 'rgb(231, 212, 158)' }}>Free</div>
               <div className="text-sm uppercase tracking-wide">Estimates</div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* Services Overview */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+          >
             <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
               Specialty Services
             </h2>
             <p className="text-xl text-gray-600">
               Professional craftsmanship for your home or business
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid gap-3">
+          <motion.div 
+            className="grid gap-3"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.1
+                }
+              }
+            }}
+          >
             {['Siding', 'Windows', 'Framing', 'Trim Carpentry', 'Decks', 'Custom Closets & Pantries'].map((service, index) => (
-              <a href="/services" key={index}>
+              <motion.a 
+                href="/services" 
+                key={index}
+                variants={{
+                  hidden: { opacity: 0, x: -20 },
+                  visible: { opacity: 1, x: 0 }
+                }}
+                transition={{ duration: 0.4 }}
+                whileHover={{ scale: 1.02, borderColor: '#000' }}
+                whileTap={{ scale: 0.98 }}
+              >
                 <div className="p-6 border-2 border-gray-200 hover:border-black transition-all text-center group cursor-pointer">
                   <h3 className="text-xl font-bold text-black group-hover:underline">{service}</h3>
                 </div>
-              </a>
+              </motion.a>
             ))}
-          </div>
+          </motion.div>
 
-          <div className="text-center mt-12">
+          <motion.div 
+            className="text-center mt-12"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
             <a href="/services">
-              <button className="px-8 py-3 bg-black text-white hover:bg-gray-800 transition-all font-semibold">
+              <motion.button 
+                className="px-8 py-3 bg-black text-white hover:bg-gray-800 transition-all font-semibold"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 View All Services
-              </button>
+              </motion.button>
             </a>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Why Choose Us */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+          >
             <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
               Why Choose GEM Builders?
             </h2>
-          </div>
+          </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 border-2 border-gray-200">
+          <motion.div 
+            className="grid md:grid-cols-2 gap-8"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.2
+                }
+              }
+            }}
+          >
+            <motion.div 
+              className="bg-white p-8 border-2 border-gray-200"
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ scale: 1.02, borderColor: '#000' }}
+            >
               <div className="text-4xl mb-4">🛠️</div>
               <h3 className="text-2xl font-bold text-black mb-3">Expert Craftsmanship</h3>
               <p className="text-gray-700">
                 Over 25 years of hands-on experience delivering precision work that stands the test of time.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="bg-white p-8 border-2 border-gray-200">
+            <motion.div 
+              className="bg-white p-8 border-2 border-gray-200"
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ scale: 1.02, borderColor: '#000' }}
+            >
               <div className="text-4xl mb-4">⏱️</div>
               <h3 className="text-2xl font-bold text-black mb-3">On-Time Delivery</h3>
               <p className="text-gray-700">
                 We respect your schedule and complete projects on time without compromising quality.
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
@@ -236,7 +357,13 @@ export default function Home() {
 
       {/* Final CTA */}
       <section className="py-20 px-4 bg-black text-white">
-        <div className="max-w-4xl mx-auto text-center">
+        <motion.div 
+          className="max-w-4xl mx-auto text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Ready to Start Your Project?
           </h2>
@@ -245,17 +372,17 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <a href="/contact">
-              <button
+              <motion.button
                 className="px-8 py-4 text-lg font-semibold transition-all"
                 style={{ backgroundColor: 'rgb(231, 212, 158)', color: '#000' }}
-                onMouseEnter={(e) => e.currentTarget.style.opacity = '0.9'}
-                onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+                whileHover={{ scale: 1.05, opacity: 0.9 }}
+                whileTap={{ scale: 0.98 }}
               >
                 Request Free Estimate
-              </button>
+              </motion.button>
             </a>
           </div>
-        </div>
+        </motion.div>
       </section>
     </>
   );

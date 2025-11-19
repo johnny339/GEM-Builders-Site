@@ -1,6 +1,7 @@
 'use client';
 
 import SiteBackground from "@/components/SiteBackground";
+import { motion } from 'framer-motion';
 
 export default function About() {
   return (
@@ -9,38 +10,80 @@ export default function About() {
 
       {/* Company Story */}
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
+        <motion.div 
+          className="max-w-4xl mx-auto text-center"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
             Our Story
           </h2>
-          <p className="text-xl text-gray-700 mb-6 leading-relaxed">
+          <motion.p 
+            className="text-xl text-gray-700 mb-6 leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             Since 1997, GEM Builders has been delivering expert specialty contracting services across Colorado. 
             What started with one craftsman's dedication to quality framing has grown into a trusted name.
-          </p>
-          <p className="text-xl text-gray-700 leading-relaxed">
+          </motion.p>
+          <motion.p 
+            className="text-xl text-gray-700 leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
             As a family-owned business, we combine decades of hands-on experience with modern project management 
             to deliver exceptional results on every job. Our reputation is built on precision, reliability, and 
             treating every project like it's our own.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
       </section>
 
       {/* Team Section */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
               Meet the Team
             </h2>
             <p className="text-xl text-gray-600">
               Leadership built on expertise and dedication
             </p>
-          </div>
+          </motion.div>
 
           {/* Team Members */}
-          <div className="grid md:grid-cols-2 gap-12">
+          <motion.div 
+            className="grid md:grid-cols-2 gap-12"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.2
+                }
+              }
+            }}
+          >
             {/* Gustavo */}
-            <div className="bg-white p-8 lg:p-10 border-2 border-gray-200">
+            <motion.div 
+              className="bg-white p-8 lg:p-10 border-2 border-gray-200"
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ scale: 1.02, borderColor: '#000' }}
+            >
               <div className="mb-6">
                 <h3 className="text-3xl font-bold text-black mb-2">
                   Gustavo Guzman
@@ -61,10 +104,18 @@ export default function About() {
                 of a project meets the highest standards. Outside of work, Gustavo enjoys horseback riding 
                 and competitive team roping.
               </p>
-            </div>
+            </motion.div>
 
             {/* Jonathan */}
-            <div className="bg-white p-8 lg:p-10 border-2 border-gray-200">
+            <motion.div 
+              className="bg-white p-8 lg:p-10 border-2 border-gray-200"
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ scale: 1.02, borderColor: '#000' }}
+            >
               <div className="mb-6">
                 <h3 className="text-3xl font-bold text-black mb-2">
                   Jonathan Guzman
@@ -85,22 +136,49 @@ export default function About() {
                 building practices with modern project management. When he's not on the job site, you'll find 
                 him skiing, riding horses, or competing in team roping events.
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* Why Choose Us */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
               Why Choose GEM Builders
             </h2>
-          </div>
+          </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center p-6 border-2 border-gray-200 bg-gray-50">
+          <motion.div 
+            className="grid md:grid-cols-3 gap-8"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.15
+                }
+              }
+            }}
+          >
+            <motion.div 
+              className="text-center p-6 border-2 border-gray-200 bg-gray-50"
+              variants={{
+                hidden: { opacity: 0, scale: 0.9 },
+                visible: { opacity: 1, scale: 1 }
+              }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ scale: 1.05, borderColor: '#000' }}
+            >
               <div className="text-6xl font-bold mb-4 text-black">
                 25+
               </div>
@@ -108,9 +186,17 @@ export default function About() {
               <p className="text-gray-700">
                 Over two decades of proven expertise in specialty contracting
               </p>
-            </div>
+            </motion.div>
 
-            <div className="text-center p-6 border-2 border-gray-200 bg-gray-50">
+            <motion.div 
+              className="text-center p-6 border-2 border-gray-200 bg-gray-50"
+              variants={{
+                hidden: { opacity: 0, scale: 0.9 },
+                visible: { opacity: 1, scale: 1 }
+              }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ scale: 1.05, borderColor: '#000' }}
+            >
               <div className="text-6xl font-bold mb-4 text-black">
                 100%
               </div>
@@ -118,9 +204,17 @@ export default function About() {
               <p className="text-gray-700">
                 Every project receives our full attention to detail and craftsmanship
               </p>
-            </div>
+            </motion.div>
 
-            <div className="text-center p-6 border-2 border-gray-200 bg-gray-50">
+            <motion.div 
+              className="text-center p-6 border-2 border-gray-200 bg-gray-50"
+              variants={{
+                hidden: { opacity: 0, scale: 0.9 },
+                visible: { opacity: 1, scale: 1 }
+              }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ scale: 1.05, borderColor: '#000' }}
+            >
               <div className="text-6xl font-bold mb-4 text-black">
                 Local
               </div>
@@ -128,36 +222,54 @@ export default function About() {
               <p className="text-gray-700">
                 Family-owned and operated, serving communities across Colorado
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* Project Image */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
               Our Work
             </h2>
             <p className="text-xl text-gray-600">
               Quality craftsmanship you can see
             </p>
-          </div>
+          </motion.div>
           
-          <div className="w-full h-96 md:h-[500px] lg:h-[600px] overflow-hidden rounded-lg shadow-xl">
+          <motion.div 
+            className="w-full h-96 md:h-[500px] lg:h-[600px] overflow-hidden rounded-lg shadow-xl"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <img 
               src="/barnHome.jpg" 
               alt="GEM Builders Project"
               className="w-full h-full object-cover"
             />
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="py-20 px-4 bg-black text-white">
-        <div className="max-w-4xl mx-auto text-center">
+        <motion.div 
+          className="max-w-4xl mx-auto text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Ready to Work Together?
           </h2>
@@ -166,17 +278,17 @@ export default function About() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href='/contact'>
-              <button 
+              <motion.button 
                 className="px-8 py-4 text-lg font-semibold transition-all"
                 style={{ backgroundColor: 'rgb(231, 212, 158)', color: '#000' }}
-                onMouseEnter={(e) => e.currentTarget.style.opacity = '0.9'}
-                onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+                whileHover={{ scale: 1.05, opacity: 0.9 }}
+                whileTap={{ scale: 0.98 }}
               >
                 Get Free Estimate
-              </button>
+              </motion.button>
             </a>
           </div>
-        </div>
+        </motion.div>
       </section>
     </>
   );

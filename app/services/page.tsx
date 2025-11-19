@@ -1,6 +1,7 @@
 'use client';
 
 import SiteBackground from '@/components/SiteBackground';
+import { motion } from 'framer-motion';
 
 export default function Services() {
   const services = [
@@ -36,23 +37,46 @@ export default function Services() {
       
       <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
             <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
               What We Do
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Professional specialty contracting with expert craftsmanship and attention to detail
             </p>
-          </div>
+          </motion.div>
           
           {/* Grid changes to 3 columns to accommodate 5 services */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+          <motion.div 
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.12
+                }
+              }
+            }}
+          >
             {services.map((service, index) => (
-              <div 
+              <motion.div 
                 key={index} 
                 className={`p-8 lg:p-10 border-2 border-gray-200 hover:border-black transition-all group cursor-pointer ${
                   index === 4 ? 'md:col-span-2 lg:col-span-1' : ''
                 }`}
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+                transition={{ duration: 0.5 }}
+                whileHover={{ scale: 1.03, borderColor: '#000' }}
               >
                 {/* Icon */}
                 <div className="mb-6 flex justify-center">
@@ -70,14 +94,20 @@ export default function Services() {
                 <p className="text-gray-600 text-center leading-relaxed">
                   {service.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
       {/* Final CTA */}
       <section className="py-20 px-4 bg-black text-white">
-        <div className="max-w-4xl mx-auto text-center">
+        <motion.div 
+          className="max-w-4xl mx-auto text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Ready to Start Your Project?
           </h2>
@@ -86,17 +116,17 @@ export default function Services() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <a href="/contact">
-              <button
+              <motion.button
                 className="px-8 py-4 text-lg font-semibold transition-all"
                 style={{ backgroundColor: 'rgb(231, 212, 158)', color: '#000' }}
-                onMouseEnter={(e) => e.currentTarget.style.opacity = '0.9'}
-                onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+                whileHover={{ scale: 1.05, opacity: 0.9 }}
+                whileTap={{ scale: 0.98 }}
               >
                 Request Free Estimate
-              </button>
+              </motion.button>
             </a>
           </div>
-        </div>
+        </motion.div>
       </section>
     </>
   );
