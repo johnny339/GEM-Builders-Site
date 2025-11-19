@@ -4,6 +4,7 @@ import SplashScreen from "@/components/SplashScreen";
 import Head from "next/head";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import AnimatedCounter from "@/components/AnimatedCounter";
 
 export default function Home() {
   const [showSplash, setShowSplash] = useState(true);
@@ -159,7 +160,12 @@ export default function Home() {
               }}
               transition={{ duration: 0.5 }}
             >
-              <div className="text-4xl font-bold mb-2" style={{ color: 'rgb(231, 212, 158)' }}>25+</div>
+              <AnimatedCounter 
+                value={25} 
+                suffix="+" 
+                className="text-4xl font-bold mb-2" 
+                style={{ color: 'rgb(231, 212, 158)' }}
+              />
               <div className="text-sm uppercase tracking-wide">Years Experience</div>
             </motion.div>
             {/* <div>
