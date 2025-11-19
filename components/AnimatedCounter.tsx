@@ -13,7 +13,7 @@ interface AnimatedCounterProps {
 
 export default function AnimatedCounter({ 
   value, 
-  duration = 1, 
+  duration = 2, 
   suffix = '',
   className = '',
   style 
@@ -21,8 +21,8 @@ export default function AnimatedCounter({
   const ref = useRef<HTMLDivElement>(null);
   const motionValue = useMotionValue(0);
   const springValue = useSpring(motionValue, {
-    damping: 60,
-    stiffness: 100
+    damping: 80,
+    stiffness: 120
   });
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
@@ -35,7 +35,7 @@ export default function AnimatedCounter({
   useEffect(() => {
     springValue.on('change', (latest) => {
       if (ref.current) {
-        ref.current.textContent = Math.floor(latest).toLocaleString() + suffix;
+        ref.current.textContent = Math.round(latest).toLocaleString() + suffix;
       }
     });
   }, [springValue, suffix]);
