@@ -11,6 +11,7 @@ export default function Contact() {
     location: '',
     phone: '',
     projectType: '',
+    foundUs: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -46,7 +47,7 @@ export default function Contact() {
 
       if (response.ok) {
         showNotification('success', 'Thank you for your inquiry! We will contact you soon.');
-        setFormData({ name: '', email: '', location: '', phone: '', projectType: '', message: '' });
+        setFormData({ name: '', email: '', location: '', phone: '', projectType: '', foundUs: '', message: '' });
       } else {
         showNotification('error', 'Something went wrong. Please try again.');
       }
@@ -199,6 +200,20 @@ export default function Contact() {
                 <option value="Custom Closets & Pantries">Custom Closets & Pantries</option>
                 <option value="Decks">Decks</option>
                 <option value="All In One">All In One</option>
+              </select>
+            </div>
+            
+            <div>
+              <label className="block text-sm font-semibold text-black mb-2">How did you hear about us?</label>
+              <select
+                required
+                className="w-full px-4 py-3 border-2 border-gray-300 focus:border-black focus:outline-none text-black transition-colors"
+                value={formData.foundUs}
+                onChange={(e) => setFormData({...formData, foundUs: e.target.value})}
+              >
+                <option value="">Select an option</option>
+                <option value="Siding">Google</option>
+                <option value="Windows">Facebook</option>
               </select>
             </div>
             
