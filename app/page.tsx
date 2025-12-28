@@ -254,13 +254,13 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <a href="/services">
+            <a href="/projects">
               <motion.button 
                 className="px-8 py-3 bg-black text-white hover:bg-gray-800 transition-all font-semibold"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                View All Services
+                View Our Projects
               </motion.button>
             </a>
           </motion.div>

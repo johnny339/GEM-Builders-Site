@@ -39,9 +39,9 @@ export default function Header({ transparent = false }: HeaderProps) {
             <Link href="/services" className={`${linkClass} transition-colors text-base lg:text-lg`}>
               Services
             </Link>
-            {/* <Link href="/projects" className={`${linkClass} transition-colors text-base lg:text-lg`}> */}
-              {/* Projects */}
-            {/* </Link> */}
+            <Link href="/projects" className={`${linkClass} transition-colors text-base lg:text-lg`}>
+              Projects
+            </Link>
             <Link href="/process" className={`${linkClass} transition-colors text-base lg:text-lg`}>
               Process
             </Link>
